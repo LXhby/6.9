@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        .menu{
+            position: absolute;
+        }
+        ul{
+           
+            overflow: hidden;
+        }
+        ul li{
+            position: relative;
+            width: 100px;
+            height: 50px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 50px;
+            font-size: 14px;
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="">菜单一</a>
+            </li>
+            <li>
+                <a href="">菜单二</a>
+            </li>
+            <li>
+                <a href="">菜单一</a>
+            </li>
+            <li>
+                <a href="">菜单一</a>                    
+            </li>
+            <li>
+                <a href="">菜单一</a>              
+            </li>
+            <li>
+                <a href="">菜单一</a>
+            </li>
+        </ul>      
+    </div>
+</body>
+<script src="tween.js"></script>
+<script src="animation.js"></script>
+<script>
+    var oUl =document.querySelector(".menu ul"),
+        oLi =oUl.querySelectorAll("li");
+        for(var i=0;i<oLi.length;i++){
+            var thatLi =oLi[i];
+            thatLi.style.top=oUl.offsetHeight+"px"//获取节点属性的真实高度
+        }
+        document.onclick =function(){
+            for(var i=0;i<oLi.length;i++){
+            var thatLi =oLi[i];
+            animation(oLi[i],{
+                top:0,
+            },{
+                duration:1000,
+                // delay:500,
+                // timing:"linear",
+                // timingType:0
+            });
+        }
+    }
+</script>
+</html>
