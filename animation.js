@@ -1,10 +1,3 @@
-/*  
-* 完整版运动框架
-* ele 元素节点对象
-* attr 属性值（json数据对象）
-* time 时间相关 （json数据对象）
-* callback 回调函数
-*/
 function animation(ele,attr,time,callback){
 
     var goTime = new Date(),//获取开始时间
